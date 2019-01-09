@@ -1,0 +1,598 @@
+@media (max-width: 1200px) {
+	#container {  min-width: 100%;  }
+	.nav{width: 100%; }
+	.sub_title{width: 100%; }
+	#header .nav > .nav_l{margin-left: 0; }
+}
+
+@media (max-width: 930px) {
+	.sns_login ul li{ margin-left: 5px;  }
+	.sns_login ul li img{width: 60px; }
+	.monit .search_bar h4{margin-left: 10px; }
+	.monit .search{margin-left: 10px; }
+	
+	
+	.dashboard .cont_title_wrap .cont_title h2 span{font-size: 17px; }
+	
+	
+	.score_wrap .example{margin-bottom: 50px; }
+	.percent_w2{text-align: center; }
+    .sub_title {
+        display: none;
+        width: auto;
+    }
+
+    #container {
+        padding-top: 52px; min-width: 100%;
+    }
+
+    /***************
+    *** Intelligence ***
+    ***************/
+    .intelligence .cont_title_wrap .cont_title h2,
+    .overview .cont_title_wrap .cont_title h2 {
+        font-size: 18px;
+        line-height: 25px;
+        padding: 40px 10px;
+    }
+	.overview .content_wrap{padding-bottom: 50px; }
+	.solution .content_wrap .clear_title{margin-bottom: 10px;   }
+	.solution .content_wrap .clear_title > h3{   font-size: 15px;  }
+	.main .sec2 ul{width: 97%; }
+	
+    .intelligence .content_wrap {
+        padding: 50px 0;
+    }
+
+    .intelligence .content_wrap .img_wrap,
+    .overview .article {
+        overflow: hidden;
+        text-align: center;
+    }
+
+    .intelligence .content_wrap .img_wrap img {
+        display: inline-block;
+        width: 120px;
+        margin: 0 20px 20px 0;
+    }
+
+    .intelligence .content_wrap .img_wrap img.even {
+        margin-right: 0;
+    }
+
+    .intelligence .content_wrap .img_wrap img:nth-child(2) {
+        margin-right: 0;
+    }
+
+    .intelligence .content_wrap .img_wrap .icon_plus {
+        display: none;
+    }
+
+    .intelligence .content_wrap .text_wrap h3 {
+        font-size: 14px;
+    }
+
+    .intelligence .content_wrap .text_wrap .img_background {
+        width: 100%;
+    }
+
+    .intelligence .content_wrap .text_wrap .diagram {
+        width: 100%;
+        max-width: 500px; 
+    }
+
+    /***************
+    *** OverView ***
+    ***************/
+    .overview .article .image_wrap img {
+        width: 150px;
+        margin-bottom: 30px;
+    }
+
+    .overview .article .text_wrap {
+        padding: 0 20px;
+    }
+
+    .overview .article p,
+    .overview .article span {
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    /***************
+    *** price ***
+    ***************/
+    .price .sec3 {
+        padding: 60px 0;
+    }
+
+    .price .sec3 h3,
+    .price .sec3 h4 {
+        font-size: 18px;
+    }
+
+
+
+    .price .sec3 ul li .cont {
+        height: auto;
+    }
+
+    .price .sec3 ul li > div {
+        animation-duration: initial;
+        animation-delay: initial;
+        visibility: visible !important;
+    }
+
+    .price .table_wrap {
+        width: auto;
+        padding: 0 30px;
+    }
+
+    .price .table_wrap th, .price .table_wrap td {
+        width: 23.5555%;
+    }
+
+    .price .table_wrap tbody tr span {
+        font-size: 15px;
+    }
+
+    .price .table_wrap img {
+        width: 20px;
+    }
+
+    /***************
+    *** usecases ***
+    ***************/
+
+    .usecases .content_wrap li .article {
+        width: auto;
+        text-align: center;
+    }
+
+    .usecases .article .image_wrap img {
+        width: 150px;
+        margin-bottom: 30px;
+    }
+
+    .usecases .article .text_wrap {
+        padding-left: 0;
+        display: block;
+    }
+
+    .usecases .article .text_wrap img {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .usecases .article p {
+        font-size: 16px;
+    }
+
+
+    /***************
+    *** check ***
+    ***************/
+    .check .cont_title_wrap {
+        padding: 30px 0 50px;
+    }
+
+    .check .cont_title {
+        display: block;
+        flex: initial;
+    }
+
+    .check .cont_title h2 {
+        font-size: 24px; width:100%;
+        padding: 0 20px 5px;
+    }
+
+    .check .cont_title h3 {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    .check .cont_title h3 strong {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .check .cont_title ul {
+        overflow: hidden;
+        width: 130px;
+        float: initial;
+
+        margin: 0 auto;
+    }
+	
+    .check .check_wrap {
+        max-width: initial;
+        padding: 0 20px 50px;
+    }
+.check .score_wrap.clear .score{width: 100%; float: none; border-spacing: 0px; }
+.check .score_wrap.clear .score_box{width: 50%; margin: 0; }
+
+    .check .score_wrap h2 {
+        text-align: center;
+    }
+
+    .check .score_wrap .percent_wrap {
+        display: block;
+        margin: 0 auto 30px;
+    }
+
+    .check .score_wrap .score {
+        display: block;
+        overflow: hidden;
+        vertical-align: initial;
+        width: 100%; padding: 0; 
+    }
+    
+	
+    .check .score_wrap .score_box {
+        display: block;
+        float: left;
+        width: calc(50% - 10px);
+        vertical-align: initial;
+        margin: 5px; box-sizing: border-box;
+        border: none;
+    }
+    
+    .check .score_wrap.clear .score_box{ border: none; padding-bottom: 15px; padding: 5px;  }
+    .check .text_wrap table td{padding-left: 15px; }
+	.check .text_wrap table th{padding: 5px; }
+	
+	.modal .top .logo { padding-left: 0;  }
+	
+	
+    .check .score_wrap .score_box:nth-child(2n) {
+        margin-right: 0;
+    }
+
+    .check .score_wrap .btn_wrap {
+        float: initial;
+        padding: 0;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .check .score_wrap .btn_wrap a {
+        width: 49%; float: left; 
+    }
+
+    .check .score_wrap .btn_wrap a:last-child {
+        margin-right: 0;
+    }
+
+    .check ul .list_wrap {
+        overflow: hidden;
+        padding: 0 20px;
+    }
+
+    .check ul .list_wrap .score_box {
+        width: calc( 50% - 10px);
+    }
+
+    .check ul .list_wrap .score_box:nth-child(2n) {
+        margin-right: 0;
+    }
+
+    .check ul .list_wrap strong {
+        width: 68px;
+        margin-right: 40px;
+    }
+
+    .check ul .list_wrap span {
+        display: inline-block;
+      /*   width: calc(100% - 120px); */
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        word-wrap: normal;
+        overflow: hidden;
+    }
+
+    .check ul .list_wrap .relative_info {
+        width: calc(100% - 120px);
+    }
+
+    .check ul .list_wrap .relative_info span {
+        width: 100%;
+    }
+
+    /***************
+    *** dashboard ***
+    ***************/
+    .dashboard .cont_title_wrap {
+        padding: 0 0 30px;
+    }
+
+    .dashboard .cont_title_wrap .cont_title h2 {
+        font-size: 15px;
+        padding: 10px 20px 10px;
+
+        line-height: 30px;
+    }
+
+    .dashboard .content_wrap {
+        padding: 0 20px;
+    }
+
+    .dashboard h2.title {
+        margin-bottom: 15px;
+    }
+
+    .dashboard .score_wrap .score_box {
+        width: calc(50% - 7px);
+        margin-bottom: 10px;
+    }
+
+    .dashboard .score_wrap .score_box:nth-child(2n) {
+        margin-right: 0;
+    }
+    .dashboard .score_wrap .score_box.black h3,
+    .dashboard .score_wrap .score_box p {
+        font-size: 15px;
+    }
+
+    .dashboard .table_list {
+        width: 100%;
+    }
+
+    .dashboard .table_wrap {
+        width: 100%;
+    }
+
+    /***************
+    *** solution ***
+    ***************/
+    .solution .cont_title_wrap .cont_title h2 {
+        font-size: 15px;
+        padding: 10px 20px 10px;
+
+        line-height: 30px;
+    }
+
+    .solution .cont_title_wrap .cont_title h2 span {
+        font-size: 14px;
+    }
+
+    .solution .content_wrap {
+        padding: 30px 20px;
+        padding-bottom: 0;
+    }
+
+    .solution .content_wrap h2 {
+        font-size: 15px;
+    }
+
+    .solution .article .article-left {
+        margin-bottom: 15px;
+    }
+
+    .solution .article .article-left .image_wrap img {
+        width: 80px;
+    }
+
+    .solution .article .article-left .text_wrap p {
+        font-size: 12px;
+    }
+
+    .solution .article .article-right h3 {
+        display: none;
+    }
+
+    .solution .article .article-left .text_wrap p, .solution .article .article-right .text_wrap p {
+        font-size: 12px;
+    }
+
+    .solution .button_wrap {
+        padding: 30px 0 70px;
+    }
+
+    .solution .button_wrap a {
+        font-size: 15px;
+    }
+
+
+    /***************
+    *** tracking ***
+    ***************/
+    .tracking .cont_title_wrap {
+        padding: 30px 0 50px;
+        margin-bottom: 30px;
+    }
+
+    .tracking .cont_title {
+        display: block;
+        flex: initial;
+    }
+	
+	.score_table{border-spacing:0; }
+	.score_table td{font-size: 13px; }
+	
+    .tracking .cont_title h2 {
+        font-size: 24px;
+        padding: 0 20px 5px;
+    }
+
+    .tracking .cont_title h3 {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    .tracking .cont_title h3 strong {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .tracking .cont_title ul {
+        overflow: hidden;
+        width: 130px;
+        float: initial;
+
+        margin: 0 auto;
+    }
+
+    .tracking .content_wrap {
+        margin: 0 0 80px;
+        padding: 0 20px;
+    }
+
+    .tracking_cont1 {
+        height: 600px;
+    }
+
+    .content_wrap h4 {
+        font-size: 15px;
+    }
+    .content_wrap h4:before {
+        height: 14px;
+    }
+
+    .tracking .content_wrap > ul > li {
+        margin-top: 50px;
+    }
+
+    .tracking_cont2 ul li > div h2,
+    .tracking_cont2 ul li > div p {
+        font-size: 12px;
+    }
+
+    .modal .container {
+        padding: 0 20px;
+    }
+
+    .modal .middle .info {
+        width: 50px;
+        font-size: 12px;
+    }
+
+    .modal .nice-select.wide,
+    .modal .middle textarea {
+        width: calc(100% - 61px);
+    }
+
+    .modal .middle textarea {
+        font-size: 12px;
+    }
+
+    .modal .bottom .close_btn {
+    }
+
+	.login_wrap{width: 100%; padding: 30px 0;  }
+	.login_form_wrap{padding:  30px 20px; }
+	.tems_wrap{width: 100%; padding: 50px 30px; box-sizing: border-box; }
+	
+    /***************
+    *** unusual ***
+    ***************/
+    .unusual .cont_title_wrap .cont_title h2 {
+        font-size: 18px;
+        padding: 0 20px 5px;
+    }
+
+    .unusual .content_wrap nav {
+        display: inline-block;
+        width: 100%;
+    }
+	
+	.usecases .article .text_wrap img{width: 85%; margin: auto; }
+	
+    .unusual .sub_nav_wrap {
+        position: static;
+        width: 100%;
+    }
+	
+	.mo_img{ display: block; }
+	.web_img{ display: none; }
+
+
+    .unusual .content_wrap nav .sub_nav {
+        position: static;
+        width: 100%;
+    }
+
+    .unusual .content_wrap nav .sub_nav li {
+        width: 100%;
+    }
+
+    .unusual .content_wrap nav li {
+        width: 100%;
+        padding: 15px 10px ; float: none;
+    }
+
+    .unusual .content_wrap nav > ul > li > span:after {
+        content: "▼";
+    }
+
+    .unusual .content_wrap .table_wrap {
+        width: 100%;
+    }
+
+    .unusual .table_list {
+        padding: 0;
+    }
+
+    .unusual .content_wrap {
+        padding: 0 20px;
+    }
+
+    .unusual .pc {
+        display: none;
+    }
+
+    .unusual .mobile {
+        display: table;
+    }
+
+    .unusual .content_wrap .table_wrap h2 {
+        margin-bottom: 30px;
+        margin-top: 50px;
+    }
+    
+    .price .sec3 ul{width: 95%; }
+	.price .sec3 ul li > div{width: 95%; }
+	.price .sec3 ul li .title h5, .main .sec3 ul li .title h5{font-size: 16px; }
+	.price .sec3 ul li{width: 100%; margin-bottom: 20px; }
+	.price .sec3 ul li .cont strong{font-size: 17px; }
+	
+	.unusual .table_list table td{padding: 5px; }
+	
+		
+	.unusual .content_wrap .select_wrap{padding: 0; }
+	
+	.unusual .content_wrap .select_wrap .select_list{    width: calc(33.33333% - 5px); margin-left: 5px; }
+	.unusual .content_wrap .select_wrap .nice-select{width: 100%; }
+	
+	.unusual .content_wrap .select_wrap .select_list .info{width: 100%; }
+	.unusual .nice-select.wide .list{right: inherit !important; }
+	
+	.unusual .nice-select .current{width: 100%; display: inline-block;  overflow: hidden; }
+	
+	.tracking .search_bar{width: 96%; }
+	.tracking .search_bar .search{width: 100%; display: inline-block; }
+	.tracking .search_bar div input[type="text"]{width: calc(100% - 50px); }
+	.monit .search_bar div input[type="text"]{width: calc(100% - 103px); }
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

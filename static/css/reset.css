@@ -1,0 +1,120 @@
+@CHARSET "UTF-8"; 
+/************* Common *************/
+
+@font-face {
+    font-family: 'Nanum Gothic';
+    font-style: normal;
+    font-weight: 400;
+    src:  url(../fonts/NanumGothic.woff) format('woff'),
+    url(../fonts/NanumGothic.otf) format('otf'),
+    url(../fonts/NanumGothic.ttf) format('ttf');
+      font-display: fallback;
+}
+ 
+ 
+@font-face {
+    font-family: 'Nanum Gothic';
+    font-style: bold;
+    font-weight: 700;
+    src:  url(../fonts/NanumGothicBold.woff) format('woff'),
+    url(../fonts/NanumGothicBold.otf) format('otf'),
+    url(../fonts/NanumGothicBold.ttf) format('ttf');
+      font-display: fallback;
+
+
+}
+
+@font-face {
+    font-family: 'Nanum Square';
+    font-style: bold;
+    font-weight: 700;
+    src:  url(../fonts/NanumSquareEB.woff) format('woff'),
+    url(../fonts/NanumSquareEB.eot) format('eot'),
+    url(../fonts/NanumSquareEB.ttf) format('ttf');
+      font-display: fallback;
+}
+
+@font-face {
+    font-family: 'Nanum Square';
+    font-style: normal;
+    font-weight: 500;
+    src:  url(../fonts/NanumSquareR.woff) format('woff'),
+    url(../fonts/NanumSquareR.eot) format('eot'),
+    url(../fonts/NanumSquareR.ttf) format('ttf');
+      font-display: fallback;
+}
+
+*:focus {
+    outline: none;
+}
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, textarea, button, input {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nanum Gothic', 'Nanum Square';
+    outline: none; color: #000;
+}
+
+.tp{  font-family: 'Nanum Square';}
+
+
+select{ color: #73879C; outline: none; }
+button, input[type=button], button, input[type=reset], i, .setting ul li:NTH-CHILD(4){ cursor: pointer; }
+ol, ul { list-style: none; color: #000; text-decoration: none; }
+a{ text-decoration: none; color:#73879C; border:none }
+td, td, table{ border-spacing: 0;  }
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #000;
+}
+html,body,div,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,pre,form,p,blockquote,fieldset,input { margin: 0; padding: 0; } 
+ h1,h2,h3,h4,h5,h6,pre,code,address,caption,cite,code,em,strong,th { font-size: 1em;  } 
+ ul,ol { list-style: none; } 
+fieldset,img { border: none; } 
+caption,th { text-align: left; } 
+table { border-collapse: collapse; border-spacing: 0; } 
+
+::-moz-placeholder { /* Firefox 19+ */
+  color: #000;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #000;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #000; 
+}
+
+.color_r{color:red!important;}
+.mt_0{margin-top: 0!important; }
+.mr_10{margin-right: 10px; }
+.mr_15{margin-right: 15px; }
+.mr_30{margin-right: 30px; }
+
+
+.mt_0{margin-top: 0px!important; }
+.mt_5{margin-top: 5px; }
+.mt_15{margin-top: 15px!important; }
+.mt_20{margin-top: 20px!important; }
+.mt_50{margin-top: 50px!important; }
+.mb_20{margin-bottom: 20px; }
+
+.test_l{text-align: left !important;}
+.pt_5{padding-top: 5px!important; }
+.pm_0{padding-bottom: 0!important; }
+
+.fl { float: left; }
+.fr {float: right; }
+a {cursor:pointer;}

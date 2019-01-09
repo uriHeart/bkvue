@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="/static/js/vue.min.js"></script>
+  <script src="/static/js/jquery-3.2.0.min.js" type="text/javascript"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BlockTracer</title>
+  <link rel="stylesheet" href="/static/css/reset.css">
+  <link type="text/css" rel="stylesheet" href="/static/css/jquery.mmenu.all.css" />
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="/static/css/mobile.css">
+  <link rel="stylesheet" href="/static/css/animate.css">
+  <link rel="stylesheet" href="/static/css/nice-select.css">
+  <link rel="stylesheet" href="/static/css/animate.css">
+  <link rel="stylesheet" href="/static/css/jquery-ui.min.css">
+  <link rel="stylesheet" href="/static/css/jquery.modal.min.css"/>
+  <link rel="stylesheet" href="/static/css/custom.css">
+</head>
+</head>
+<body id="body-id">
+
+<div id="header">
+
+  <div class="nav">
+    <h1><a href="/static/home/index.html"> <img src="/static/img/logo.png"> </a></h1>
+    <ul class="nav_l nav_web">
+      <li><a href="/static/sub/overview.html"> 블록트레이서 </a>
+        <ul>
+          <li><a href="/static/sub/overview.html"> Overview </a></li>
+          <li><a href="/static/sub/usecases.html"> Usecases </a></li>
+          <li><a href="/static/sub/intelligence.html"> Intelligence DB </a></li>
+        </ul>
+      </li>
+      <li><a href="/static/sub/price.html"> 가격정책 </a></li>
+      <li><a href="/static/sub/solution.html"> 솔루션 </a></li>
+      <li><a href="/static/sub/tracking.html"> 분석 </a>
+        <ul>
+          <li><a href="/static/sub/tracking.html"> 추적분석 </a></li>
+          <li><a href="/static/sub/tracking2.html"> 비트코인 추적분석 </a></li>
+          <li><a href="/static/sub/monitoring.html#/top10"> 이상거래분석 </a></li>
+          <li><a href="/static/sub/monitoring.html"> 모니터링 </a></li>
+        </ul>
+      </li>
+      <li><a href="/static/sub/dashboard.html"> 대시보드 </a></li>
+    </ul>
+    <ul class="nav_r nav_web" id="btn_login">
+      <!--
+      <li><a href="/static/sub/check.html">API</a>
+      </li>
+      <li><a href="/static/home/join.html">Sign Up</a></li>
+      <li class="log_btn"><a href="/static/home/login.html">Login</a></li>
+      -->
+    </ul>
+    <ul class="nav_r nav_mo">
+      <li><a href="#menu"><span></span></a></li>
+    </ul>
+  </div>
+
+  <div id="menu_wrap">
+    <nav id="menu">
+      <ul>
+        <li><span> 블록트레이서 </span>
+          <ul>
+            <li><a href="/static/sub/overview.html"> Overview </a></li>
+            <li><a href="/static/sub/usecases.html"> Usecases </a></li>
+            <li><a href="/static/sub/intelligence.html"> Intelligence DB </a></li>
+          </ul>
+        </li>
+        <li><a href="/static/sub/price.html"> 가격정책 </a></li>
+        <li><a href="/static/sub/solution.html"> 솔루션 </a></li>
+        <li><span> 분석 </span>
+          <ul>
+            <li><a href="/static/sub/tracking.html"> 추적분석 </a></li>
+            <li><a href="/static/sub/monitoring.html#/top10"> 이상거래분석 </a></li>
+            <li><a href="/static/sub/monitoring.html"> 모니터링 </a></li>
+          </ul>
+        </li>
+        <li><a href="/static/sub/dashboard.html"> 대시보드 </a></li>
+        <li><a href="/static/sub/check.html">API</a> </li>
+        <li><a href="#">Sign Up</a></li>
+        <li class="log_btn"><a href="/static/home/login.html">Login</a></li>
+      </ul>
+    </nav>
+  </div>
+
+</div>
+<div id="wrap">
+
+
+
+
+  <div id =app>
+  </div>
+
+  <div id="footer">
+    <div class="wrap">
+      <div>
+        <div class="fl">
+          <p>
+            © 2018 In The Forest<br/>
+            Blockchain Security Service
+          </p>
+        </div>
+
+        <div class="fr">
+          <ul>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">이용약관 및 개인정보취급방침</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+<script src="/static/js/jquery-ui.min.js" type="text/javascript"></script>
+<script src="/static/js/scrolla.jquery.js" type="text/javascript"></script>
+<script src="/static/js/jquery.mmenu.all.js" type="text/javascript" ></script>
+<script src="/static/js/jquery.nice-select.js"></script>
+<script src="/static/js/common.js" type="text/javascript"></script>
+
+<script>
+  $(function () {
+
+    $(".content_wrap ul > li").click(function () {
+      $(this).find(".sub_nav").slideDown();
+      // $(this).children('span').css("background", "none");변경
+    });
+
+  });
+
+
+
+  $(document).ready(function () {
+    $.ajax({
+      url: '/user/login_chk',
+      type: 'POST',
+      dataType:'json',
+      data: JSON.stringify({
+      }),
+      contentType: "application/json",
+      cache: false,
+      success: function(responseJson) {
+        is_login = responseJson.is_login;
+        user_id = responseJson.id
+
+        if(is_login) {
+          $('#btn_login').html('\
+                <li><a href="/static/sub/api.html">API</a></li>\
+                <li class="log_btn" class="login"><a href="#" class="login">'+responseJson.id+' 님</a></li>\
+                <li class="log_btn" class="login"><a href="/user/logout" class="login">Logout</a></li>\
+            ')
+        } else {
+          $('#btn_login').html('\
+                <li><a href="/static/sub/api.html">API</a></li>\
+                <li><a href="/static/home/join.html">Sign Up</a></li>\
+                <li class="log_btn"><a href="/static/home/login.html">Login</a></li>\
+            ')
+        }
+      }
+    });
+  })
+
+</script>
+</html>
