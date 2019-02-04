@@ -1,42 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="/static/js/vue.min.js"></script>
-  <script src="/static/js/jquery-3.2.0.min.js" type="text/javascript"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BlockTracer</title>
+  <link rel="stylesheet" href="/static/css/bootstrap.css">
   <link rel="stylesheet" href="/static/css/reset.css">
-  <link type="text/css" rel="stylesheet" href="/static/css/jquery.mmenu.all.css" />
   <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="/static/css/jquery.modal.min.css"/>
+  <link type="text/css" rel="stylesheet" href="/static/css/jquery.mmenu.all.css" />
+  <link rel="stylesheet" href="/static/css/custom.css">
   <link rel="stylesheet" href="/static/css/mobile.css">
-  <link rel="stylesheet" href="/static/css/animate.css">
   <link rel="stylesheet" href="/static/css/nice-select.css">
   <link rel="stylesheet" href="/static/css/animate.css">
   <link rel="stylesheet" href="/static/css/jquery-ui.min.css">
-  <link rel="stylesheet" href="/static/css/jquery.modal.min.css"/>
-  <link rel="stylesheet" href="/static/css/custom.css">
+  <link rel="stylesheet" href="/static/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="/static/css/txtProgress.css">
+
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
 </head>
 </head>
 <body id="body-id">
+<script src="/static/js/jquery-3.2.0.min.js" type="text/javascript"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/jquery.modal.min.js" type="text/javascript"></script>
+<script src="/static/js/jquery-ui.min.js" type="text/javascript"></script>
+<script src="/static/js/scrolla.jquery.js" type="text/javascript"></script>
+<script src="/static/js/jquery.mmenu.all.js" type="text/javascript" ></script>
+<script src="/static/js/jquery.nice-select.js"></script>
+<script src="/static/js/common.js" type="text/javascript"></script>
+<script src="/static/js/circle-progress.js"></script>
+<script src='/static/js/pdfmake.min.js'></script>
+<script src='/static/js/vfs_fonts.js'></script>
+<script src='/static/js/html2canvas.js'></script>
+<script src="/static/js/txtProgress.js"></script>
 
 <div id="header">
-
   <div class="nav">
     <h1><a href="/static/home/index.html"> <img src="/static/img/logo.png"> </a></h1>
     <ul class="nav_l nav_web">
-      <li><a href="/static/sub/overview.html"> 블록트레이서 </a>
+      <li><a href="/static/sub/monitoring.html#/overview"> 블록트레이서 </a>
         <ul>
-          <li><a href="/static/sub/overview.html"> Overview </a></li>
-          <li><a href="/static/sub/usecases.html"> Usecases </a></li>
-          <li><a href="/static/sub/intelligence.html"> Intelligence DB </a></li>
+          <li><a href="/static/sub/monitoring.html#/overview"> Overview </a></li>
+          <li><a href="/static/sub/monitoring.html#/usecases"> Usecases </a></li>
+          <li><a href="/static/sub/monitoring.html#/intelligence"> Intelligence DB </a></li>
         </ul>
       </li>
-      <li><a href="/static/sub/price.html"> 가격정책 </a></li>
-      <li><a href="/static/sub/solution.html"> 솔루션 </a></li>
+      <li><a href="/static/sub/monitoring.html#/price"> 가격정책 </a></li>
+      <li><a href="/static/sub/monitoring.html#/solution"> 솔루션 </a></li>
       <li><a href="/static/sub/tracking.html"> 분석 </a>
         <ul>
-          <li><a href="/static/sub/tracking.html"> 추적분석 </a></li>
+          <li><a href="/static/sub/tracking.html"> 이더리움 추적분석 </a></li>
           <li><a href="/static/sub/tracking2.html"> 비트코인 추적분석 </a></li>
           <li><a href="/static/sub/monitoring.html#/top10"> 이상거래분석 </a></li>
           <li><a href="/static/sub/monitoring.html"> 모니터링 </a></li>
@@ -62,34 +77,31 @@
       <ul>
         <li><span> 블록트레이서 </span>
           <ul>
-            <li><a href="/static/sub/overview.html"> Overview </a></li>
-            <li><a href="/static/sub/usecases.html"> Usecases </a></li>
-            <li><a href="/static/sub/intelligence.html"> Intelligence DB </a></li>
+            <li><a href="/static/sub/monitoring.html#/overview"> Overview </a></li>
+            <li><a href="/static/sub/monitoring.html#/usecases"> Usecases </a></li>
+            <li><a href="/static/sub/monitoring.html#/intelligence"> Intelligence DB </a></li>
           </ul>
         </li>
-        <li><a href="/static/sub/price.html"> 가격정책 </a></li>
-        <li><a href="/static/sub/solution.html"> 솔루션 </a></li>
+        <li><a href="/static/sub/monitoring.html#/price"> 가격정책 </a></li>
+        <li><a href="/static/sub/monitoring.html#/solution"> 솔루션 </a></li>
         <li><span> 분석 </span>
           <ul>
-            <li><a href="/static/sub/tracking.html"> 추적분석 </a></li>
+            <li><a href="/static/sub/tracking.html"> 이더리움 추적분석 </a></li>
+            <li><a href="/static/sub/tracking2.html"> 비트코인 추적분석 </a></li>
             <li><a href="/static/sub/monitoring.html#/top10"> 이상거래분석 </a></li>
             <li><a href="/static/sub/monitoring.html"> 모니터링 </a></li>
           </ul>
         </li>
         <li><a href="/static/sub/dashboard.html"> 대시보드 </a></li>
         <li><a href="/static/sub/check.html">API</a> </li>
-        <li><a href="#">Sign Up</a></li>
+        <li><a href="/static/home/join.html">Sign Up</a></li>
         <li class="log_btn"><a href="/static/home/login.html">Login</a></li>
       </ul>
     </nav>
   </div>
-
+  <!--header end-->
 </div>
 <div id="wrap">
-
-
-
-
   <div id =app>
   </div>
 
@@ -114,13 +126,14 @@
     </div>
   </div>
 </div>
-
+<script src="/static/js/circle-progress.js"></script>
+<script src="/static/js/jspdf.min.js"></script>
+<script src='/static/js/pdfmake.min.js'></script>
+<script src='/static/js/vfs_fonts.js'></script>
+<script src='/static/js/html2canvas.js'></script>
+<script src="/static/js/txtProgress.js"></script>
 </body>
-<script src="/static/js/jquery-ui.min.js" type="text/javascript"></script>
-<script src="/static/js/scrolla.jquery.js" type="text/javascript"></script>
-<script src="/static/js/jquery.mmenu.all.js" type="text/javascript" ></script>
-<script src="/static/js/jquery.nice-select.js"></script>
-<script src="/static/js/common.js" type="text/javascript"></script>
+
 
 <script>
   $(function () {
@@ -135,34 +148,53 @@
 
 
   $(document).ready(function () {
+    // $('select').niceSelect();
+    $("ul .title").click(function(){
+      var submenu = $(this).next(".text_wrap");
+      console.log("click")
+      // submenu 가 화면상에 보일때는 위로 보드랍게 접고 아니면 아래로 보드랍게 펼치기
+      if( submenu.is(":visible") ){
+        submenu.slideUp();
+        $(this).find("span").text("▼");
+      }else{
+        submenu.slideDown();
+        $(this).find("span").text("▲");
+      }
+
+      if( $(this).next(" .list_wrap").is(":visible") ){
+        $(this).find("span").text("▼");
+      }else{
+        $(this).find("span").text("▲");
+      }
+    });
+
     $.ajax({
       url: '/user/login_chk',
       type: 'POST',
       dataType:'json',
-      data: JSON.stringify({
-      }),
       contentType: "application/json",
-      cache: false,
-      success: function(responseJson) {
+       success: function(responseJson) {
         is_login = responseJson.is_login;
         user_id = responseJson.id
-
         if(is_login) {
           $('#btn_login').html('\
-                <li><a href="/static/sub/api.html">API</a></li>\
-                <li class="log_btn" class="login"><a href="#" class="login">'+responseJson.id+' 님</a></li>\
-                <li class="log_btn" class="login"><a href="/user/logout" class="login">Logout</a></li>\
-            ')
+              <li><a href="/static/sub/api.html">API</a></li>\
+              <li class="log_btn" class="login"><a href="#" class="login">'+responseJson.id+' 님</a></li>\
+              <li class="log_btn" class="login"><a href="/user/logout" class="login">Logout</a></li>\
+          ')
         } else {
           $('#btn_login').html('\
-                <li><a href="/static/sub/api.html">API</a></li>\
-                <li><a href="/static/home/join.html">Sign Up</a></li>\
-                <li class="log_btn"><a href="/static/home/login.html">Login</a></li>\
-            ')
+              <li><a href="/static/sub/api.html">API</a></li>\
+              <li><a href="/static/home/join.html">Sign Up</a></li>\
+              <li class="log_btn"><a href="/static/home/login.html">Login</a></li>\
+          ')
         }
       }
     });
-  })
+
+  });
+
+
 
 </script>
 </html>

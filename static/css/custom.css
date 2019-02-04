@@ -622,7 +622,7 @@ span.block {
 .check ul .list_wrap span {
     display: inline-block;
     vertical-align: middle;
-    font-size: 10px; 
+    font-size: 10px;
 }
 
 .check ul .list_wrap .score_box {
@@ -632,7 +632,7 @@ span.block {
 .check ul .list_wrap h5 {
     margin-bottom: 10px;
     font-size: 15px;
-    padding-left: 20px; 
+    padding-left: 20px;
 }
 
 .check ul .list_wrap .float_l span {
@@ -795,7 +795,7 @@ span.block {
     font-size: 18px;
     padding: 5px 0;
     border-radius: 5px;
-    width: 190px; 
+    width: 190px;
 }
 
 .price .table_wrap tbody tr:nth-child(5) span {
@@ -877,7 +877,7 @@ span.block {
     padding-bottom: 5px;
 }
 
-    
+
 .modal .container {
     padding: 0 45px;
 }
@@ -1048,7 +1048,7 @@ span.block {
 
     width: 400px;
     /*background-color: pink;*/
-	
+
     margin: 0 20px 20px 0;
 }
 
@@ -1132,7 +1132,7 @@ display:inline-block;;
     text-align: left;
     margin: 0;
     padding: 10px;
-    
+
 }
 
 .unusual .content_wrap nav .sub_nav li a{ display: inline-block; width: 100%;}
@@ -1290,7 +1290,15 @@ display:inline-block;;
 .api .content_wrap {padding-bottom: 200px; padding-top: 10px;  }
 .api .button_wrap{padding: 0 0 200px; }
 
-
+#data-table {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /*text-align: center;*/
+  color: #2c3e50;
+  margin: 0px auto 0;
+  width: 1000px;
+}
 
 
 

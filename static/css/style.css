@@ -37,6 +37,7 @@
 #header .nav h1 a{  padding: 5px 0; display: inline-block; }
 .nav{ width: 1200px; margin: auto;   }
 #header .nav .log_btn a{background: #fcba1e; margin: 16px; padding: 4px 20px; margin-right: 0;  }
+#header .nav .log_btn .login{border: 3px solid white; background: #300d4f; margin: 16px; padding: 4px 20px; margin-right: 0;  }
 #container{padding-top: 58px; min-width: 1200px;  }
 .wrap{ width: 100%; max-width: 1200px; margin: auto; }
 
@@ -153,7 +154,7 @@ border: none; cursor: pointer; }
 .content_wrap h4:BEFORE{ content: " "; width: 3px; height: 18px; display: inline-block; background: black; float: left; margin-right: 14px; margin-top: 2px;  }
 .content_wrap h4{font-size: 20px; }
 
-.tracking_cont1{background: #fff;  box-shadow: 4px 4px 12px #ccc;  height: 450px;  }
+.tracking_cont1{background: #fff;  box-shadow: 4px 4px 12px #ccc;  height: 850px;  }
 .tracking_cont{ margin-top: 20px; } 
 
 .tracking_cont .node { cursor: pointer; }

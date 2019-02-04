@@ -26,7 +26,7 @@
             <div class="sub_nav_wrap">
               <ul class="sub_nav">
                 <li><a href="monitoring.html#/top10">Top 10 조회 순위 분석</a></li>
-                <li><a href="unusual_2.html">Top 10 연관 조회 분석</a></li>
+                <!--<li><a href="unusual_2.html">Top 10 연관 조회 분석</a></li>-->
               </ul>
               <div class="bg"></div>
             </div>
@@ -39,24 +39,27 @@
               </ul>
             </div>
           </li>
-          <li>
-            <span>BW Balance(잔고) 변동</span>
-            <div class="sub_nav_wrap">
-              <ul class="sub_nav">
-                <li><a href="unusual_4.html">Top 10 BW 잔고 변동</a></li>
-                <li><a href="unusual_5.html">코인별 BW 잔고 변동</a></li>
-              </ul>
-            </div>
-          </li>
+          <!--<li>-->
+            <!--<span>BW Balance(잔고) 변동</span>-->
+            <!--<div class="sub_nav_wrap">-->
+              <!--<ul class="sub_nav">-->
+                <!--<li><a href="unusual_4.html">Top 10 BW 잔고 변동</a></li>-->
+                <!--<li><a href="unusual_5.html">코인별 BW 잔고 변동</a></li>-->
+              <!--</ul>-->
+            <!--</div>-->
+          <!--</li>-->
           <li>
             <span>상세 분석 및 이상거래 추적</span>
             <div class="sub_nav_wrap">
               <ul class="sub_nav">
-                <li><a href="unusual_6.html">1) BW vs. 거래소 거래 분석</a></li>
-                <li><a href="unusual_6.html">2) BW 역추적 거래 분석</a></li>
-                <li><a href="unusual_6.html">3) BW 유효성 증감 분석</a></li>
-                <li><a href="unusual_6.html">4) BW vs. Black IP 연관 분석</a></li>
-                <li><a href="unusual_6.html">5) BW vs. 접속 IP 연관 분석</a></li>
+                <li><a href="monitoring.html#/black/url">1) BW 스캠 사이트 분석</a></li>
+                <li><a href="monitoring.html#/black/ip">2) BW 스캠 ip 분석</a></li>
+
+                <!--<li><a href="unusual_6.html">1) BW vs. 거래소 거래 분석</a></li>-->
+                <!--<li><a href="unusual_6.html">2) BW 역추적 거래 분석</a></li>-->
+                <!--<li><a href="unusual_6.html">3) BW 유효성 증감 분석</a></li>-->
+                <!--<li><a href="unusual_6.html">4) BW vs. Black IP 연관 분석</a></li>-->
+                <!--<li><a href="unusual_6.html">5) BW vs. 접속 IP 연관 분석</a></li>-->
               </ul>
             </div>
           </li>
@@ -68,9 +71,8 @@
 </template>
 
 <script>
-  export default {
-    name: "Analysis"
-  }
+export default {
+  name: 'Analysis'
+}
 </script>
-<style scoped>
-</style>
+
