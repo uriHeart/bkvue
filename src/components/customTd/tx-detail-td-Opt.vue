@@ -2,7 +2,7 @@
   <div class="btn-group btn-group-sm">
     <button class="btn btn-default" title="Display row"
       :class="{ '-nested-comp-open-btn': isDisplayRowVisible }"
-      @click="toggleNestedComp('DisplayRow')">
+      @click="toggleNestedComp('nestedDisplay')">
       <i class="fa fa-list-ul"></i>
     </button>
   </div>
@@ -16,11 +16,7 @@ export default {
   },
   computed: {
     isDisplayRowVisible () {
-      if (this.nested.comp !== 'DisplayRow') return
-      return this.nested.visible
-    },
-    isFriendsTableVisible () {
-      if (this.nested.comp !== 'FriendsTable') return
+      if (this.nested.comp !== 'nestedDisplay') return
       return this.nested.visible
     }
   },

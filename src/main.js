@@ -5,8 +5,8 @@ import App from './App'
 import router from './router'
 import axios from 'axios'
 
-//Vue.prototype.$rootPath = 'http://localhost:5000'
-Vue.prototype.$rootPath = ''
+Vue.prototype.$rootPath = 'http://localhost:5000'
+//Vue.prototype.$rootPath = ''
 
 Vue.prototype.$http = axios
 
