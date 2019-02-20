@@ -18,7 +18,6 @@ import BlackIpGrid from './BlackIpGrid'
 
 export default {
   name: 'BlackIP',
-  components: {Analysis,BlackIpGrid}
+  components: {Analysis, BlackIpGrid}
 }
 </script>
-
