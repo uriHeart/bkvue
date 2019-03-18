@@ -73,8 +73,6 @@
     },
     methods: {
       handleDataChange () {
-        console.log("handleDataChange")
-        console.log(this)
 
         dataHandler(this.query,this.origin_data,['currency','receive_value','receive_count','send_value','send_count'])
           .then(({ rows, total }) => {
@@ -85,7 +83,7 @@
       getData(addr){
 
         const path = this.$rootPath + '/node/wallet/accumulation'
-        const data = {addr: addr,size:3000}
+        const data = {addr: addr,size:1000}
 
         this.$http.post(path,data)
           .then(response => {
@@ -97,7 +95,8 @@
 
           })
           .catch(error => {
-            alert('처리중 오류가 발생하였습니다. 관리자에게 문의 바랍니다.')
+            console.log(error)
+            //alert('처리중 오류가 발생하였습니다. 관리자에게 문의 바랍니다.')
           })
       },
       getUrlVars() {

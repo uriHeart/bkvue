@@ -447,8 +447,5 @@ export default {
     this.getScore(urlData)
   }
 }
-
-
 </script>
-
 

@@ -95,10 +95,15 @@
             this.data = response.data.data_list
             this.origin_data = response.data.data_list
             this.total = response.data.total
-            this.handleDataChange()
+            if(total>0){
+              this.handleDataChange()
+            }else{
+
+            }
           })
           .catch(error => {
-            alert('처리중 오류가 발생하였습니다. 관리자에게 문의 바랍니다.')
+            console.log(error);
+            //alert('처리중 오류가 발생하였습니다. 관리자에게 문의 바랍니다.')
           })
       },
       getUrlVars() {

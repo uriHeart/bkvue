@@ -95,7 +95,9 @@
 
           })
           .catch(error => {
-            alert('처리중 오류가 발생하였습니다. 관리자에게 문의 바랍니다.')
+            console.log('CheckBlackGrid.vue')
+            console.log(error)
+            // alert('처리중 오류가 발생하였습니다. 관리자에게 문의 바랍니다.')
           })
       },
       getUrlVars() {
