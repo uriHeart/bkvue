@@ -336,8 +336,8 @@ export default {
       score: [ { title: '잔고조회',  data: 'ETH', message:  '',  color: 'color_red', size: 'box1'  },
         { title: '사용여부분석',  data: '주소검증', message: '', color: 'color_red', size: 'box2' },
         { title: '사기여부분석',  data: '사기의심', message: '', color: 'color_red', size: 'box3' },
-        { title: 'OSINT분석',  data: '검색결과', message: '있음', color: 'color_red', size: 'box4' },
-        { title: '연관분석',  data: '위험요소', message: '유료사용자 제공', color: 'color_red', size: 'box5' }],
+        { title: '자금세탁연관분석',  data: '검색결과', message: '있음', color: 'color_red', size: 'box4' },
+        { title: '거래소연관분석',  data: '위험요소', message: '유료사용자 제공', color: 'color_red', size: 'box5' }],
       deal: '',
       balance:'',
       scam:''

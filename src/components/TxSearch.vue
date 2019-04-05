@@ -1,21 +1,15 @@
 <template>
-  <div>
-    <div style="height:100px"> 상세조회</div>
-
-    <div class="list_wrap" >
-      <div class="text_wrap" style="padding: 0px">
-        <table class="check_list">
-          <tr>
-            <th>주소</th>
-            <td>{{addr}}</td>
-          </tr>
-          <tr>
-            <th>잔고</th>
-            <td>{{etherValue}} Ether</td>
-          </tr>
-        </table>
+  <div  class="content" style="text-align: center">
+    <div style="height:100px"></div>
+      <div class="search_bar">
+        <h4>기준일</h4>
+             <input type="text" id="datepicker1" class="form-control" style="width:20%" >
+            <div class="search">
+              <h4>기준 Ether</h4>
+              <input id = "addr" type="text" placeholder="ether value"  class="form-control" style="width:20%" v-model="etherValue">
+              <input type="submit"  value="Search" v-on:click=getData style="height: 40px;border: none">
+            </div>
       </div>
-    </div>
     <div id="tx-detail-table">
       <datatable v-bind="$data">
         <!--<button class="btn btn-default" @click="alertSelectedUids" :disabled="!selection.length">-->
@@ -28,6 +22,22 @@
 
 </template>
 <script>
+  $.datepicker.setDefaults({
+    dateFormat: 'yy-mm-dd',
+    prevText: '이전 달',
+    nextText: '다음 달',
+    monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+    monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+    dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+    dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+    dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+    showMonthAfterYear: true,
+    yearSuffix: '년'
+  });
+  $(function() {
+     $("#datepicker1").datepicker();
+  });
+
   import fromAddr from './customTd/td-origin-from-addr'
   import toAddr from './customTd/td-origin-to-addr'
   import hash from './customTd/txDetail-td-hash'
@@ -44,21 +54,17 @@
         supportBackup: false,
         supportNested: true,
         tblClass: 'table-bordered',
-        //tblStyle: 'table-layout: fixed', // must
         pagination:true,
         pageSizeOptions: [20,50,100,200],
-        //fixHeaderAndSetBodyMaxHeight :800,
         columns: (() => {
           const cols = [
-            { title: '', field: 'custom', tdComp:'opt'},
-            { title: 'Hash', field: 'hash', tdComp:'hash', tdStyle:'display:inline-block; text-overflow: ellipsis; overflow: hidden; width:150px;',thStyle:'width:150px'},
+             { title: 'Hash', field: 'hash', tdComp:'hash', tdStyle:'display:inline-block; text-overflow: ellipsis; overflow: hidden; width:150px;',thStyle:'width:150px'},
             { title: 'Block', field: 'blockNumber'},
             { title: '거래시간', field: 'timestampSeoul',  sortable: true, tdStyle:'width:200px'},
             { title: 'From', field: 'from',thComp: 'FilterTh'  ,tdComp:'fromAddr',sortable: true},
             { title: 'To', field: 'to',thComp: 'FilterTh'  ,tdComp:'toAddr',sortable: true },
-            { title: '거래금액', field: 'floatValue',sortable: true,tdStyle: 'text-align:right'},
-            { title: '통화', field: 'currency'},
-            { title: 'Original From', field: 'origin_from', visible: false},
+            { title: '거래금액(Ether)', field: 'floatValue',sortable: true,tdStyle: 'text-align:right'},
+             { title: 'Original From', field: 'origin_from', visible: false},
             { title: 'Original To', field: 'origin_to', visible: false },
             { title: 'addr', field: 'addr', visible: false },
             { title: 'tokenName', field: 'tokenName', visible: false },
@@ -78,17 +84,14 @@
           })
         })(),
         data: [],
+        loading: true,
         origin_data: [],
         total: 0,
         addr:'',
         etherValue:'',
-        //selection: [],
+        searchDate:'',
         summary: {},
-        // `query` will be initialized to `{ limit: 10, offset: 0, sort: '', order: '' }` by default
-        // other query conditions should be either declared explicitly in the following or set with `Vue.set / $vm.$set` manually later
-        // otherwise, the new added properties would not be reactive
         query: amINestedComp ? { uid: this.row.friends } : { limit: 20, offset: 0, sort: '', order: '' },
-        // any other staff that you want to pass to dynamic components (thComp / tdComp / nested components)
         xprops: {
           eventbus: new Vue()
         }
@@ -105,58 +108,31 @@
     },
     methods: {
       handleDataChange () {
-        this.getData(this.addr)
+        this.getData()
       },
-      getValue(addr){
-        const path = this.$rootPath + '/eth/get/ether/value'
-
-        this.$http.post(path,{'addr':addr})
-          .then(response => {
-            this.etherValue = response.data.value
-          })
-          .catch(error => {
-            console.log(error);
-          })
-      },
-      getData(addr){
-        const path = this.$rootPath + '/es/tx/detail/list'
+      getData(){
+        this.data=[];
+        this.loading = true;
+        const path = this.$rootPath + '/es/tx/list'
         let sort = this.query.sort =='' ? 'blockNumber' : this.query.sort
         let order = this.query.order =='' ? 'desc' : this.query.order
-        const data = {addr:addr, size:this.query.limit, sort:sort, page:this.query.offset, order:order}
+        let searchDate = $('#datepicker1').val()+' 00:00:00'
+        const data = {size:this.query.limit, sort:sort, page:this.query.offset, order:order, searchDate:searchDate, etherValue: this.etherValue}
 
         this.$http.post(path,data)
           .then(response => {
             this.data = response.data.data_list
             this.total = response.data.total
-            this.data.forEach((item, index, array) =>{
-              this.getErc20(item)
-            })
-          })
-          .catch(error => {
-            console.log(error);
-          })
-      },
-      getErc20(row){
-        const path = this.$rootPath + '/node/erc20/data'
-        const data = row
-        this.$http.post(path,data)
-          .then(response => {
-
-            if(response.data.result_code == "Erc20"){
-
-              response.data.erc20_data.map(row=>{
-                this.data.push(row)
-                this.data.sort(function (a,b) {
-                  return b.blockNumber -a.blockNumber || a.hash.localeCompare(b.hash)
-                })
-              })
-
+            if(response.data.total==0){
+              this.loading = false;
             }
           })
           .catch(error => {
+            this.loading = false;
             console.log(error);
           })
       },
+
       getUrlVars() {
         var vars = {};
         var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
@@ -179,14 +155,42 @@
       }
     },
     mounted(){
-      const urlData = this.getUrlVars();
-      this.addr = urlData.addr
-      this.getData(this.addr)
-      this.getValue(this.addr)
+
+      var today = new Date();
+      var monthOfYear = today.getMonth()
+      today.setMonth(monthOfYear - 3)
+      var month = today.getMonth() + 1; //months from 1-12
+      var day = today.getDate();
+      var year = today.getFullYear();
+
+      if ((day+"").length < 2) {       // 일이 한자리 수인 경우 앞에 0을 붙여주기 위해
+        day = "0" + day;
+      }
+
+      if ((month+"").length < 2) {       // 월이 한자리 수인 경우 앞에 0을 붙여주기 위해
+        month = "0" + month;
+      }
+
+      today = year + "-" + month + "-" + day;
+      document.getElementById("datepicker1").value = today
+      this.etherValue = 10000
+
+      this.getData()
+
     }
   }
 </script>
 <style scoped>
+  .search_bar div input[type="submit"] {background: #fcba1e; color:#fff; font-weight: bold; font-size: 17px; width: 80px;    }
+  .search_bar h4{font-size: 20px; text-align: left; float: left; padding: 9px 0; width: 10%  }
+  .search_bar {width: 100%; display: inline-block; margin-top: 80px; max-width: 1200px;   }
+  .search_bar input { float: left;  }
+  .search_bar > input { background: #fff; height: 40px; padding: 10px; box-sizing: border-box; font-size: 16px; border: 1px solid #ccc; margin-right: 10px;  }
+  .search_bar  div input[type="text"]{ float: left; border: none; width: calc(100% - 350px); background: #fff; height: 40px;  padding: 10px;
+    box-sizing: border-box; font-size: 16px; border: 1px solid #ccc;   }
+  .tracking .search_bar  div input[type="submit"]{ float: left; background:#fcba1e url("/static/img/search_btn.png") center center no-repeat; width: 40px; height: 40px;
+    border: none; cursor: pointer; }
+
   #tx-detail-table {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;

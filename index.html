@@ -35,46 +35,11 @@
 <script src='/static/js/html2canvas.js'></script>
 <script src="/static/js/txtProgress.js"></script>
 
-<div id="header">
-  <div class="nav">
-    <h1><a href="/static/home/index.html"> <img src="/static/img/logo.png"> </a></h1>
-    <ul class="nav_l nav_web">
-      <li><a href="/static/sub/monitoring.html#/overview"> 블록트레이서 </a>
-        <ul>
-          <li><a href="/static/sub/monitoring.html#/overview"> Overview </a></li>
-          <li><a href="/static/sub/monitoring.html#/usecases"> Usecases </a></li>
-          <li><a href="/static/sub/monitoring.html#/intelligence"> Intelligence DB </a></li>
-        </ul>
-      </li>
-      <li><a href="/static/sub/monitoring.html#/price"> 가격정책 </a></li>
-      <li><a href="/static/sub/monitoring.html#/solution"> 솔루션 </a></li>
-      <li><a href="/static/sub/tracking.html"> 분석 </a>
-        <ul>
-          <li><a href="/static/sub/tracking.html"> 이더리움 추적분석 </a></li>
-          <li><a href="/static/sub/tracking2.html"> 비트코인 추적분석 </a></li>
-          <li><a href="/static/sub/monitoring.html#/top10"> 이상거래분석 </a></li>
-          <li><a href="/static/sub/monitoring.html"> 모니터링 </a></li>
-        </ul>
-      </li>
-      <li><a href="/static/sub/dashboard.html"> 대시보드 </a></li>
-    </ul>
-    <ul class="nav_r nav_web" id="btn_login">
-      <!--
-      <li><a href="/static/sub/check.html">API</a>
-      </li>
-      <li><a href="/static/home/join.html">Sign Up</a></li>
-      <li class="log_btn"><a href="/static/home/login.html">Login</a></li>
-      -->
-    </ul>
-    <ul class="nav_r nav_mo">
-      <li><a href="#menu"><span></span></a></li>
-    </ul>
-  </div>
-
-  <div id="menu_wrap">
-    <nav id="menu">
-      <ul>
-        <li><span> 블록트레이서 </span>
+  <div id="header">
+    <div class="nav">
+      <h1><a href="/static/home/index.html"> <img src="/static/img/logo.png"> </a></h1>
+      <ul class="nav_l nav_web">
+        <li><a href="/static/sub/monitoring.html#/overview"> 블록트레이서 </a>
           <ul>
             <li><a href="/static/sub/monitoring.html#/overview"> Overview </a></li>
             <li><a href="/static/sub/monitoring.html#/usecases"> Usecases </a></li>
@@ -83,21 +48,58 @@
         </li>
         <li><a href="/static/sub/monitoring.html#/price"> 가격정책 </a></li>
         <li><a href="/static/sub/monitoring.html#/solution"> 솔루션 </a></li>
-        <li><span> 분석 </span>
+        <li><a href="/static/sub/tracking.html"> 분석 </a>
           <ul>
             <li><a href="/static/sub/tracking.html"> 이더리움 추적분석 </a></li>
             <li><a href="/static/sub/tracking2.html"> 비트코인 추적분석 </a></li>
             <li><a href="/static/sub/monitoring.html#/top10"> 이상거래분석 </a></li>
+            <li><a href="/static/sub/monitoring.html#tx/search"> 고액(Ether)송금거래 분석</a></li>
             <li><a href="/static/sub/monitoring.html"> 모니터링 </a></li>
           </ul>
         </li>
         <li><a href="/static/sub/dashboard.html"> 대시보드 </a></li>
-        <li><a href="/static/sub/check.html">API</a> </li>
+      </ul>
+      <ul class="nav_r nav_web" id="btn_login">
+        <!--
+        <li><a href="/static/sub/check.html">API</a>
+        </li>
         <li><a href="/static/home/join.html">Sign Up</a></li>
         <li class="log_btn"><a href="/static/home/login.html">Login</a></li>
+        -->
       </ul>
-    </nav>
-  </div>
+      <ul class="nav_r nav_mo">
+        <li><a href="#menu"><span></span></a></li>
+      </ul>
+    </div>
+
+    <div id="menu_wrap">
+      <nav id="menu">
+        <ul>
+          <li><span> 블록트레이서 </span>
+            <ul>
+              <li><a href="/static/sub/monitoring.html#/overview"> Overview </a></li>
+              <li><a href="/static/sub/monitoring.html#/usecases"> Usecases </a></li>
+              <li><a href="/static/sub/monitoring.html#/intelligence"> Intelligence DB </a></li>
+            </ul>
+          </li>
+          <li><a href="/static/sub/monitoring.html#/price"> 가격정책 </a></li>
+          <li><a href="/static/sub/monitoring.html#/solution"> 솔루션 </a></li>
+          <li><span> 분석 </span>
+            <ul>
+              <li><a href="/static/sub/tracking.html"> 이더리움 추적분석 </a></li>
+              <li><a href="/static/sub/tracking2.html"> 비트코인 추적분석 </a></li>
+              <li><a href="/static/sub/monitoring.html#/top10"> 이상거래분석 </a></li>
+              <li><a href="/static/sub/monitoring.html#tx/search"> 고액(Ether)송금거래 분석</a></li>
+              <li><a href="/static/sub/monitoring.html"> 모니터링 </a></li>
+            </ul>
+          </li>
+          <li><a href="/static/sub/dashboard.html"> 대시보드 </a></li>
+          <li><a href="/static/sub/check.html">API</a> </li>
+          <li><a href="/static/home/join.html">Sign Up</a></li>
+          <li class="log_btn"><a href="/static/home/login.html">Login</a></li>
+        </ul>
+      </nav>
+    </div>
   <!--header end-->
 </div>
 <div id="wrap">

@@ -54,6 +54,9 @@
               <ul class="sub_nav">
                 <li><a href="monitoring.html#/black/url">1) BW 스캠 사이트 분석</a></li>
                 <li><a href="monitoring.html#/black/ip">2) BW 스캠 ip 분석</a></li>
+                <li><a href="monitoring.html#/exchange/rel">3) 거래소 연관없는 사기 추정주소 분석</a></li>
+                <li><a href="monitoring.html#/amount/double">4) 비정상 거래패턴 Ether 수신내역 </a></li>
+                <li><a href="monitoring.html#/pyramid/scheme">5) 비정상 거래패턴 Ether 수집내역 </a></li>
 
                 <!--<li><a href="unusual_6.html">1) BW vs. 거래소 거래 분석</a></li>-->
                 <!--<li><a href="unusual_6.html">2) BW 역추적 거래 분석</a></li>-->

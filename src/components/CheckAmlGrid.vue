@@ -22,14 +22,13 @@
         supportBackup: false,
         supportNested: true,
         tblClass: 'table-bordered',
-        //tblStyle: 'table-layout: fixed', // must
         pagination:true,
-        pageSizeOptions: [50,100,200,300],
-        //fixHeaderAndSetBodyMaxHeight :800,
+        pageSizeOptions: [50, 100, 200, 300],
         columns: (() => {
           const cols = [
-            { title: '자금세탁 연관 주소', field: 'aml_addr',  sortable: true, tdComp:'tdAddr'},
-            { title: '일련번호', field: 'label' ,sortable: true}
+            { title: '자금세탁흐름', field: 'flow',  sortable: false},
+            { title: '일련번호', field: 'label',sortable: false},
+            { title: '사기주소', field: 'address',  sortable: false,tdComp:'tdAddr'}
           ]
           const groupsDef = {
             Normal: ['aml_addr', 'label']
@@ -47,7 +46,7 @@
         origin_data: [],
         total: 0,
         addr:'',
-        //selection: [],
+        loading: true,
         summary: {},
         // `query` will be initialized to `{ limit: 10, offset: 0, sort: '', order: '' }` by default
         // other query conditions should be either declared explicitly in the following or set with `Vue.set / $vm.$set` manually later
@@ -80,12 +79,13 @@
           })
       },
       getData(addr){
-
-        const path = this.$rootPath + '/sql/get/black/aml/list'
+        this.loading = true
+        const path = this.$rootPath + '/es/get/aml/list'
         const data = {addr:addr}
 
         this.$http.post(path,data)
           .then(response => {
+            this.loading = false
             console.log(response)
             this.data = response.data.data_list
             this.origin_data = response.data.data_list
@@ -94,7 +94,7 @@
 
           })
           .catch(error => {
-            console.log('CheckAmlGrid.vue')
+            this.loading = false
             console.log(error)
             // alert('처리중 오류가 발생하였습니다. 관리자에게 문의 바랍니다.')
           })

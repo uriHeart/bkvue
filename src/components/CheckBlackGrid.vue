@@ -28,9 +28,9 @@
         //fixHeaderAndSetBodyMaxHeight :800,
         columns: (() => {
           const cols = [
-            { title: '사기주소', field: 'black_addr',  sortable: true,tdComp:'tdAddr'},
-            { title: '일련번호', field: 'label',sortable: true},
-            { title: 'from_addr', field: 'from_addr',thComp: 'FilterTh'  ,visible: 'false',sortable: true }
+            { title: '해킹흐름', field: 'flow',  sortable: false},
+            { title: '일련번호', field: 'label',sortable: false},
+            { title: '사기주소', field: 'address',  sortable: false,tdComp:'tdAddr'}
           ]
           const groupsDef = {
             Normal: ['black_addr', 'label']
@@ -48,6 +48,7 @@
         origin_data: [],
         addr:'',
         total: 0,
+        loading:true,
         //selection: [],
         summary: {},
         // `query` will be initialized to `{ limit: 10, offset: 0, sort: '', order: '' }` by default
@@ -74,28 +75,28 @@
     methods: {
       handleDataChange () {
 
-        dataHandler(this.query,this.origin_data,['black_addr','label','from_addr'])
+        dataHandler(this.query,this.origin_data,['address','label','flow'])
           .then(({ rows, total }) => {
             this.data = rows
             this.total = total
           })
       },
       getData(addr){
-
-        const path = this.$rootPath + '/es/get/black/rel/list'
-        const data = {addr:addr,size:3000}
+        this.loading = true;
+        const path = this.$rootPath + '/es/get/black/list'
+        const data = {addr:addr}
 
         this.$http.post(path,data)
           .then(response => {
-            console.log(this)
-            this.data = response.data
-            this.origin_data = response.data
-            this.total = response.data.length
+            this.loading = false;
+            this.data = response.data.data_list
+            this.origin_data = response.data.data_list
+            this.total = response.data.total
             this.handleDataChange()
 
           })
           .catch(error => {
-            console.log('CheckBlackGrid.vue')
+            this.loading = false;
             console.log(error)
             // alert('처리중 오류가 발생하였습니다. 관리자에게 문의 바랍니다.')
           })

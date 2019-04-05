@@ -13,7 +13,10 @@ import Overview from '@/components/static/Overview'
 import Usecases from '@/components/static/Usecases'
 import Check from '@/components/Check'
 import TxDetail from '@/components/TxDetail'
-
+import ExchangeRel from '@/components/ExchangeRel'
+import AmountDouble from '@/components/AmountDouble'
+import PyramidScheme from '@/components/PyramidScheme'
+import TxSearch from '@/components/TxSearch'
 
 
 Vue.use(Router)
@@ -77,10 +80,31 @@ export default new Router({
       path: '/black/url',
       name: 'BlackUrl',
       component: BlackUrl
-    },  {
+    },
+    {
       path: '/tx/detail',
       name: 'TxDetail',
       component: TxDetail
+    },
+    {
+      path: '/exchange/rel',
+      name: 'exchangeRel',
+      component: ExchangeRel
+    },
+    {
+      path: '/amount/double',
+      name: 'amountDouble',
+      component: AmountDouble
+    },
+    {
+      path: '/pyramid/scheme',
+      name: 'pyramidScheme',
+      component: PyramidScheme
+    },
+    {
+      path: '/tx/search',
+      name: 'txSearch',
+      component: TxSearch
     }
   ]
 })

@@ -56,6 +56,7 @@
         origin_data: [],
         total: 0,
         addr:'',
+        loading: true,
         //selection: [],
         summary: {},
         // `query` will be initialized to `{ limit: 10, offset: 0, sort: '', order: '' }` by default
@@ -91,18 +92,20 @@
           })
       },
       getData(addr){
-
-        const path = this.$rootPath + '/node/get/wallet/list'
+        this.loading = true
+        const path = this.$rootPath + '/es/get/wallet/list'
         const data = {addr:addr,size:50}
 
         this.$http.post(path,data)
           .then(response => {
+            this.loading = false
             this.data = response.data.data_list
             this.origin_data = response.data.data_list
             this.$parent.deal = response.data.total
             this.total = response.data.data_list.length
           })
           .catch(error => {
+            this.loading = false
             console.log(error)
             //alert('처리중 오류가 발생하였습니다. 관리자에게 문의 바랍니다.')
           })

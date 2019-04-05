@@ -97,7 +97,7 @@
             this.total = total
           })
       },
-     getData: function () {
+      getData: function () {
        const path = this.$rootPath + '/sql/get/monitor'
         this.$http.post(path)
           .then(response => {
