@@ -29,10 +29,10 @@
         //fixHeaderAndSetBodyMaxHeight :800,
         columns: (() => {
           const cols = [
-            { title: '주소(IN)', field: 'addr_in',  sortable: true  , tdStyle: 'text-align:center' ,tdComp:'fromAddr'},
-            { title: '트랜잭션(IN)', field: 'tx_in' , sortable: true, tdStyle: 'text-align:center' },
-            { title: '원본주소(IN)', field: 'origin_from' , sortable: true,visible:false },
-            { title: '주소(OUT)', field: 'addr_out' , sortable: true , tdStyle: 'text-align:center',tdComp:'toAddr'},
+            { title: '주소(IN)',      field: 'addr_in',  sortable: true  , tdStyle: 'text-align:center' ,tdComp:'fromAddr'},
+            { title: '트랜잭션(IN)',  field: 'tx_in' , sortable: true, tdStyle: 'text-align:center' },
+            { title: '원본주소(IN)',  field: 'origin_from' , sortable: true,visible:false },
+            { title: '주소(OUT)',     field: 'addr_out' , sortable: true , tdStyle: 'text-align:center',tdComp:'toAddr'},
             { title: '트랜잭션(OUT)', field: 'tx_out', sortable: true, tdStyle: 'text-align:center'},
             { title: '원본주소(OUT)', field: 'origin_to' , sortable: true,visible:false },
 
@@ -52,7 +52,8 @@
         data: [],
         origin_data: [],
         total: 0,
-        addr:'',
+        addr: '',
+        loading: true,
         //selection: [],
         summary: {},
         // `query` will be initialized to `{ limit: 10, offset: 0, sort: '', order: '' }` by default
@@ -68,7 +69,6 @@
     watch: {
       query: {
         handler () {
-
           if(this.data.length!==0){
             this.handleDataChange()
           }
@@ -87,21 +87,23 @@
       },
       getData(addr){
 
+        this.loading=true
         const path = this.$rootPath + '/es/get/addr/inOut/list'
         const data = {addr:addr}
 
         this.$http.post(path,data)
           .then(response => {
+            this.loading=false
             this.data = response.data.data_list
             this.origin_data = response.data.data_list
             this.total = response.data.total
-            if(total>0){
+            if(this.total>0){
               this.handleDataChange()
             }else{
-
             }
           })
           .catch(error => {
+            this.loading=false
             console.log(error);
             //alert('처리중 오류가 발생하였습니다. 관리자에게 문의 바랍니다.')
           })
@@ -115,11 +117,9 @@
       }
     },
     mounted(){
-
       const urlData = this.getUrlVars();
       this.addr = urlData.addr
       this.getData(this.addr)
-
     }
   }
 </script>
@@ -129,4 +129,4 @@
     width: 65px;
   }
 </style>
-
+0x7df1bd58e8fd49803e43987787adfecb4a0a086c

@@ -15,7 +15,7 @@
   export default {
     name: 'FriendsTable', // `name` is required as a recursive component
     components: {tdAddr},
-    props: ['row','searchAddr'], // from the parent FriendsTable (if exists)
+    props: ['row','searchAddr','score'], // from the parent FriendsTable (if exists)
     data () {
       const amINestedComp = !!this.row
       return {
@@ -28,12 +28,13 @@
         //fixHeaderAndSetBodyMaxHeight :800,
         columns: (() => {
           const cols = [
-            { title: '해킹흐름', field: 'flow',  sortable: false},
-            { title: '일련번호', field: 'label',sortable: false},
-            { title: '사기주소', field: 'address',  sortable: false,tdComp:'tdAddr'}
+            { title: '사기지갑', field: 'black_label',  sortable: false},
+            { title: 'No', field: 'no',  sortable: false},
+            { title: '사기연관지갑', field: 'label',sortable: false},
+            { title: '사기주소', field: 'rel_address',  sortable: false,tdComp:'tdAddr'}
           ]
           const groupsDef = {
-            Normal: ['black_addr', 'label']
+            Normal: ['black_label', 'label']
           }
           return cols.map(col => {
             Object.keys(groupsDef).forEach(groupName => {
@@ -75,7 +76,7 @@
     methods: {
       handleDataChange () {
 
-        dataHandler(this.query,this.origin_data,['address','label','flow'])
+        dataHandler(this.query,this.origin_data,['black_label','label','rel_address'])
           .then(({ rows, total }) => {
             this.data = rows
             this.total = total
@@ -92,6 +93,7 @@
             this.data = response.data.data_list
             this.origin_data = response.data.data_list
             this.total = response.data.total
+            this.score[3].message = this.total +"건"
             this.handleDataChange()
 
           })

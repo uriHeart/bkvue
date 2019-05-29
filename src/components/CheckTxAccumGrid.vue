@@ -48,6 +48,7 @@
         origin_data: [],
         total: 0,
         addr:'',
+        loading:true,
         //selection: [],
         summary: {},
         // `query` will be initialized to `{ limit: 10, offset: 0, sort: '', order: '' }` by default
@@ -81,20 +82,22 @@
           })
       },
       getData(addr){
-
+        this.loading=true
         const path = this.$rootPath + '/node/wallet/accumulation'
         const data = {addr: addr,size:1000}
 
         this.$http.post(path,data)
           .then(response => {
-            console.log(this)
-            this.data = response.data
-            this.origin_data = response.data
+
+            this.loading=false
+            this.data = response.data =="" ? []:response.data
+            this.origin_data = response.data =="" ? []:response.data
             this.total = response.data.length
             this.handleDataChange()
 
           })
           .catch(error => {
+            this.loading=false
             console.log(error)
             //alert('처리중 오류가 발생하였습니다. 관리자에게 문의 바랍니다.')
           })

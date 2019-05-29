@@ -13,10 +13,12 @@ import Overview from '@/components/static/Overview'
 import Usecases from '@/components/static/Usecases'
 import Check from '@/components/Check'
 import TxDetail from '@/components/TxDetail'
+import ExchangeNotRel from '@/components/ExchangeNotRel'
 import ExchangeRel from '@/components/ExchangeRel'
 import AmountDouble from '@/components/AmountDouble'
 import PyramidScheme from '@/components/PyramidScheme'
 import TxSearch from '@/components/TxSearch'
+import Main from '@/components/Main'
 
 
 Vue.use(Router)
@@ -24,11 +26,16 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
+      path: '/',
+      name: 'main',
+      component: Main
+    },
+    {
       path: '/check',
       name: 'Check',
       component: Check
     },{
-      path: '/',
+      path: '/monitoring',
       name: 'Monitoring',
       component: Monitoring
     },
@@ -85,6 +92,11 @@ export default new Router({
       path: '/tx/detail',
       name: 'TxDetail',
       component: TxDetail
+    },
+    {
+      path: '/exchange/not/rel',
+      name: 'exchangeNotRel',
+      component: ExchangeNotRel
     },
     {
       path: '/exchange/rel',

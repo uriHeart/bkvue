@@ -25,7 +25,7 @@
             <span>BW 조회 연관 분석</span>
             <div class="sub_nav_wrap">
               <ul class="sub_nav">
-                <li><a href="monitoring.html#/top10">Top 10 조회 순위 분석</a></li>
+                <li><a href="/#/top10">Top 10 조회 순위 분석</a></li>
                 <!--<li><a href="unusual_2.html">Top 10 연관 조회 분석</a></li>-->
               </ul>
               <div class="bg"></div>
@@ -35,7 +35,7 @@
             <span>Coin별 BW 변동</span>
             <div class="sub_nav_wrap">
               <ul class="sub_nav">
-                <li><a href="monitoring.html#/current/bw">코인별 BW 등록 현황</a></li>
+                <li><a href="/#/current/bw">코인별 BW 등록 현황</a></li>
               </ul>
             </div>
           </li>
@@ -52,11 +52,12 @@
             <span>상세 분석 및 이상거래 추적</span>
             <div class="sub_nav_wrap">
               <ul class="sub_nav">
-                <li><a href="monitoring.html#/black/url">1) BW 스캠 사이트 분석</a></li>
-                <li><a href="monitoring.html#/black/ip">2) BW 스캠 ip 분석</a></li>
-                <li><a href="monitoring.html#/exchange/rel">3) 거래소 연관없는 사기 추정주소 분석</a></li>
-                <li><a href="monitoring.html#/amount/double">4) 비정상 거래패턴 Ether 수신내역 </a></li>
-                <li><a href="monitoring.html#/pyramid/scheme">5) 비정상 거래패턴 Ether 수집내역 </a></li>
+                <li><a href="/#/black/url">1) BW 스캠 사이트 분석</a></li>
+                <li><a href="/#/black/ip">2) BW 스캠 ip 분석</a></li>
+                <li><a href="/#/exchange/rel">3) 거래소 연관있는 사기 추정주소 분석</a></li>
+                <li><a href="/#/exchange/not/rel">4) 거래소 연관없는 사기 추정주소 분석</a></li>
+                <li><a href="/#/amount/double">5) 비정상 거래패턴 Ether 수신내역 </a></li>
+                <li><a href="/#/pyramid/scheme">6) 비정상 거래패턴 Ether 수집내역 </a></li>
 
                 <!--<li><a href="unusual_6.html">1) BW vs. 거래소 거래 분석</a></li>-->
                 <!--<li><a href="unusual_6.html">2) BW 역추적 거래 분석</a></li>-->

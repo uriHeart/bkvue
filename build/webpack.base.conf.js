@@ -43,7 +43,8 @@ module.exports = {
           resolve('node_modules/vue2-datatable-component')]
       },
       { test: /\.css$/,
-         use: [
+        include: [resolve('node_modules/v-slim-dialog')],
+        use: [
           { loader: 'style-loader' },
           {
             loader: 'css-loader',

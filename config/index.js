@@ -38,7 +38,7 @@ module.exports = {
 
   build: {
     // Template for index.html
-    index: path.resolve(__dirname, 'c:/project/bk_web/bk_web/static/sub/monitoring.html'),
+    index: path.resolve(__dirname, 'c:/project/bk_web/bk_web/static/home/index2.html'),
 
     // Paths
     //assetsRoot: path.resolve(__dirname, '../dist'),

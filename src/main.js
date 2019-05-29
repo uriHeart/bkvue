@@ -4,6 +4,8 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import axios from 'axios'
+import 'expose-loader?$J!expose-loader?jQuery!jquery'
+// import 'v-slim-dialog/dist/v-slim-dialog.css'
 
 Vue.prototype.$rootPath = 'http://localhost:5000'
 //Vue.prototype.$rootPath = ''

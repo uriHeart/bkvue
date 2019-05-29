@@ -16,7 +16,9 @@ import Email from './components/comps/td-Email'
 import IP from './components/comps/td-IP'
 import FilterTh from './components/comps/th-Filter'
 import VTooltip from 'v-tooltip'
+import SlimDialog from 'v-slim-dialog'
 
+Vue.use(SlimDialog)
 Vue.use(VTooltip)
 
 window.Vue = Vue

@@ -15,7 +15,7 @@
   export default {
     name: 'FriendsTable', // `name` is required as a recursive component
     components: {tdAddr},
-    props: ['row'], // from the parent FriendsTable (if exists)
+    props: ['row', 'score'], // from the parent FriendsTable (if exists)
     data () {
       const amINestedComp = !!this.row
       return {
@@ -86,12 +86,11 @@
         this.$http.post(path,data)
           .then(response => {
             this.loading = false
-            console.log(response)
             this.data = response.data.data_list
             this.origin_data = response.data.data_list
             this.total = response.data.total
+            this.score[4].message= this.total+"건"
             this.handleDataChange()
-
           })
           .catch(error => {
             this.loading = false

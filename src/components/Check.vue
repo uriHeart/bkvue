@@ -123,7 +123,7 @@
                   <div class="list_wrap">
                     <div class="score_wrap">
                       <div class="score" >
-                        <blackGrid></blackGrid>
+                        <blackGrid v-bind:score="score"></blackGrid>
                       </div>
                     </div>
                   </div>
@@ -140,7 +140,7 @@
                   <div class="list_wrap">
                     <div class="score_wrap">
                       <div class="score">
-                        <amlGrid></amlGrid>
+                        <amlGrid v-bind:score="score"></amlGrid>
                       </div>
                     </div>
                   </div>
@@ -329,19 +329,24 @@ export default {
   name: 'check',
   components: {txGrid,blackGrid,amlGrid,exchangeRelGrid,txAccumGrid},
   props:[],
-  data () {
+  data: function () {
     return {
-      addr:'',
-      searchAddr:'',
-      score: [ { title: '잔고조회',  data: 'ETH', message:  '',  color: 'color_red', size: 'box1'  },
-        { title: '사용여부분석',  data: '주소검증', message: '', color: 'color_red', size: 'box2' },
-        { title: '사기여부분석',  data: '사기의심', message: '', color: 'color_red', size: 'box3' },
-        { title: '자금세탁연관분석',  data: '검색결과', message: '있음', color: 'color_red', size: 'box4' },
-        { title: '거래소연관분석',  data: '위험요소', message: '유료사용자 제공', color: 'color_red', size: 'box5' }],
+      addr: '',
+      searchAddr: '',
+      score: [
+          { title: '잔고조회',         data: 'ETH',      message: '',                color: 'color_red', size: 'box1'},
+          { title: '사용여부분석',     data: '주소검증', message: '',                color: 'color_red', size: 'box2'},
+          { title: '사기여부분석',     data: '사기의심', message: '',                color: 'color_red', size: 'box3'},
+          { title: '자금세탁연관분석', data: '검색결과', message: '유료사용자 제공', color: 'color_red', size: 'box4'},
+          { title: '거래소연관분석',   data: '검색결과', message: '유료사용자 제공', color: 'color_red', size: 'box5'}
+        ],
       deal: '',
-      balance:'',
-      scam:''
+      balance: '',
+      scam: ''
     }
+  },
+  check_props: {
+    eventbus: new Vue()
   },
   watch: {
     query: {
@@ -357,14 +362,9 @@ export default {
       const data = urlData
       this.$http.post(path,data)
         .then(response => {
-          console.log(response)
-          this.score = [
-            { title: '잔고조회',  data: 'ETH', message:  response.data.round_value,  color: 'color_red', size: 'box1'  },
-            { title: '사용여부분석',  data: '주소검증', message: response.data.verify, color: 'color_red', size: 'box2' },
-            { title: '사기여부분석',  data: '사기의심', message: response.data.scam, color: 'color_red', size: 'box3' },
-            { title: 'OSINT분석',  data: '검색결과', message: '있음', color: 'color_red', size: 'box4' },
-            { title: '연관분석',  data: '위험요소', message: '유료사용자 제공', color: 'color_red', size: 'box5' }
-          ]
+          this.score[0].message =response.data.round_value;
+          this.score[1].message =response.data.verify;
+          this.score[2].message =response.data.scam;
 
           this.balance = [
             { title: 'Ether',  data: response.data.value  }
@@ -378,12 +378,11 @@ export default {
             { title: '수집 근거',  data: '자체 수집' }
           ]
 
-
           const scoreGraphValue = response.data.score;
           $('.html').data("animated", false).textProgress(scoreGraphValue);
         })
         .catch(error => {
-          alert('처리중 오류가 발생하였습니다. 관리자에게 문의 바랍니다.')
+          //alert('처리중 오류가 발생하였습니다. 관리자에게 문의 바랍니다.')
         })
     },
     alertSelectedUids () {
