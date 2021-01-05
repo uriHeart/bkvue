@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "abi-decoder": "^1.2.0",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "body-parser": "^1.18.3",
     "counterup": "^1.0.2",
     "countup.js": "^2.0.4",
