@@ -23,7 +23,7 @@
     "jquery": "^3.4.1",
     "jquery-ui": "^1.12.1",
     "mockjs": "^1.0.1-beta3",
-    "moment": "^2.23.0",
+    "moment": "^2.29.2",
     "node-gyp": "^3.8.0",
     "v-slim-dialog": "0.0.9",
     "v-tooltip": "^2.0.0-rc.33",
